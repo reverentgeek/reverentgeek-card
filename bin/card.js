@@ -20,7 +20,7 @@ const options = {
 
 // Text + chalk definitions
 const data = {
-	name: chalk.white( "David Neal" ),
+	name: chalk.white.bold( "                   DAVID NEAL" ),
 	handle: chalk.cyan( "reverentgeek" ),
 	work: chalk.white( "Senior Developer Advocate at Okta" ),
 	workUrl: chalk.cyan( "https://developer.okta.com" ),
@@ -36,15 +36,16 @@ const data = {
 	labelLinkedIn: chalk.white.bold( "  LinkedIn:" ),
 	labelWeb: chalk.white.bold( "       Web:" ),
 	labelCard: chalk.white.bold( "      Card:" ),
-	bio: chalk.white( `I am a family man, geek, musician, illustrator, 
+	bio: chalk.yellow( `I am a family man, geek, musician, illustrator, 
 speaker, software developer, and Microsoft MVP
 living in North GA. I run on a high-octane
-mixture of caffeine and JavaScript,
-and I’m entirely made of bacon.` )
+mixture of caffeine and JavaScript, and
+I’m entirely made of bacon.` )
 };
 
 // Actual strings we're going to output
-const heading = `             ${ data.name }`;
+const hr = chalk.yellow( "----------~~~~~~~~~==========~~~~~~~~~-----------" );
+const heading = `${ data.name }`;
 const working = `\n${ data.labelWork }  ${ data.work }`;
 const workingUrl = `${ data.labelWorkUrl }  ${ data.workUrl }`;
 const twittering = `${ data.labelTwitter }  ${ data.twitter }`;
@@ -56,7 +57,7 @@ const bio = `\n${ data.bio }`;
 
 const card = [
 	avatar, banner,
-	heading, working, workingUrl,
+	hr, heading, hr, working, workingUrl,
 	twittering, githubing, linkedining,
 	webing, carding, bio
 ];

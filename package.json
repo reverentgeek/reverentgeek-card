@@ -1,6 +1,6 @@
 {
   "name": "reverentgeek",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "My personal calling card.",
   "main": "./bin/card.js",
   "bin": {
