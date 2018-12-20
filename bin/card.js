@@ -5,13 +5,11 @@
 const chalk = require( "chalk" );
 const boxen = require( "boxen" );
 
+// Some sweet ascii art
+const avatar = require( "../art/avatar" );
+const banner = require( "../art/banner" );
+
 const newline = "\n";
-const banner = `                             _               _   
- ___ ___ _ _ ___ ___ ___ ___| |_ ___ ___ ___| |_ 
-|  _| -_| | | -_|  _| -_|   |  _| . | -_| -_| '_|
-|_| |___|\\_/|___|_| |___|_|_|_| |_  |___|___|_,_|
-                                |___|            
-`;
 
 // Define options for Boxen
 const options = {
@@ -37,7 +35,12 @@ const data = {
 	labelGitHub: chalk.white.bold( "    GitHub:" ),
 	labelLinkedIn: chalk.white.bold( "  LinkedIn:" ),
 	labelWeb: chalk.white.bold( "       Web:" ),
-	labelCard: chalk.white.bold( "      Card:" )
+	labelCard: chalk.white.bold( "      Card:" ),
+	bio: chalk.white( `I am a family man, geek, musician, illustrator, 
+speaker, software developer, and Microsoft MVP
+living in North GA. I run on a high-octane
+mixture of caffeine and JavaScript,
+and I’m entirely made of bacon.` )
 };
 
 // Actual strings we're going to output
@@ -49,9 +52,13 @@ const githubing = `${ data.labelGitHub }  ${ data.github }`;
 const linkedining = `${ data.labelLinkedIn }  ${ data.linkedin }`;
 const webing = `${ data.labelWeb }  ${ data.web }`;
 const carding = `\n${ data.labelCard }  ${ data.npx }`;
+const bio = `\n${ data.bio }`;
 
 const card = [
-	banner, heading, working, workingUrl, twittering, githubing, linkedining, webing, carding
+	avatar, banner,
+	heading, working, workingUrl,
+	twittering, githubing, linkedining,
+	webing, carding, bio
 ];
 
 // Put all our output together into a single variable so we can use boxen effectively
