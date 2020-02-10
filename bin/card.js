@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+"use strict";
 // 👆 Used to tell Node.js that this is a CLI tool
 
 // Pull in our modules

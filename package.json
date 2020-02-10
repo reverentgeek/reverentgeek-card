@@ -1,6 +1,6 @@
 {
   "name": "reverentgeek",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "My personal calling card.",
   "main": "./bin/card.js",
   "bin": {
@@ -17,11 +17,11 @@
   "author": "David Neal <david@reverentgeek.com> (https://reverentgeek.com)",
   "license": "MIT",
   "dependencies": {
-    "boxen": "^2.1.0",
-    "chalk": "^2.4.1"
+    "boxen": "^4.2.0",
+    "chalk": "^3.0.0"
   },
   "devDependencies": {
-    "eslint": "^5.10.0",
-    "eslint-config-leankit": "^4.5.0"
+    "eslint": "^6.8.0",
+    "eslint-config-reverentgeek": "^2.0.1"
   }
 }
