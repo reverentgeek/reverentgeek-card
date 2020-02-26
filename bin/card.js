@@ -29,6 +29,7 @@ const data = {
 	github: chalk.cyan( "https://github.com/reverentgeek" ),
 	linkedin: chalk.cyan( "https://linkedin.com/in/davidneal" ),
 	web: chalk.cyan( "https://reverentgeek.com" ),
+	email: chalk.cyan( "david@reverentgeek.com" ),
 	npx: chalk.white( "npx reverentgeek" ),
 	labelWork: chalk.white.bold( "      Work:" ),
 	labelWorkUrl: chalk.white.bold( "           " ),
@@ -37,6 +38,7 @@ const data = {
 	labelLinkedIn: chalk.white.bold( "  LinkedIn:" ),
 	labelWeb: chalk.white.bold( "       Web:" ),
 	labelCard: chalk.white.bold( "      Card:" ),
+	labelEmail: chalk.white.bold( "     Email:" ),
 	bio: chalk.yellow( `I am a family man, geek, musician, illustrator, 
 speaker, software developer, and Microsoft MVP
 living in North GA. I run on a high-octane
@@ -53,6 +55,7 @@ const twittering = `${ data.labelTwitter }  ${ data.twitter }`;
 const githubing = `${ data.labelGitHub }  ${ data.github }`;
 const linkedining = `${ data.labelLinkedIn }  ${ data.linkedin }`;
 const webing = `${ data.labelWeb }  ${ data.web }`;
+const emailing = `${ data.labelEmail }  ${ data.email }`;
 const carding = `\n${ data.labelCard }  ${ data.npx }`;
 const bio = `\n${ data.bio }`;
 
@@ -60,7 +63,7 @@ const card = [
 	avatar, banner,
 	hr, heading, hr, working, workingUrl,
 	twittering, githubing, linkedining,
-	webing, carding, bio
+	webing, emailing, carding, bio
 ];
 
 // Put all our output together into a single variable so we can use boxen effectively
