@@ -43,7 +43,10 @@ const data = {
 speaker, software developer, and Microsoft MVP
 living in North GA. I run on a high-octane
 mixture of caffeine and JavaScript, and
-I’m entirely made of bacon.` )
+I’m entirely made of bacon.` ),
+	msg: chalk.white( `If there's anything I can help you with,
+reach out anytime! You can reach me by email and
+my Twitter direct messages are open!` )
 };
 
 // Actual strings we're going to output
@@ -58,12 +61,13 @@ const webing = `${ data.labelWeb }  ${ data.web }`;
 const emailing = `${ data.labelEmail }  ${ data.email }`;
 const carding = `\n${ data.labelCard }  ${ data.npx }`;
 const bio = `\n${ data.bio }`;
+const msg = `\n${ data.msg }`;
 
 const card = [
 	avatar, banner,
 	hr, heading, hr, working, workingUrl,
 	twittering, githubing, linkedining,
-	webing, emailing, carding, bio
+	webing, emailing, carding, bio, msg
 ];
 
 // Put all our output together into a single variable so we can use boxen effectively
