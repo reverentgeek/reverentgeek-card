@@ -23,8 +23,8 @@ const options = {
 const data = {
 	name: chalk.white.bold( "                   DAVID NEAL" ),
 	handle: chalk.cyan( "reverentgeek" ),
-	work: chalk.white( "Senior Developer Advocate at Okta" ),
-	workUrl: chalk.cyan( "https://developer.okta.com" ),
+	work: chalk.white( "Developer Relations Manager" ),
+	workUrl: chalk.cyan( "https://developers.activecampaign.com" ),
 	twitter: chalk.cyan( "https://twitter.com/reverentgeek" ),
 	github: chalk.cyan( "https://github.com/reverentgeek" ),
 	linkedin: chalk.cyan( "https://linkedin.com/in/davidneal" ),
