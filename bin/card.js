@@ -26,6 +26,7 @@ const data = {
 	work: chalk.white( "Principal Developer Advocate" ),
 	workUrl: chalk.cyan( "https://pluralsight.com" ),
 	twitter: chalk.cyan( "https://twitter.com/reverentgeek" ),
+	mastodon: chalk.cyan( "https://techhub.social/@reverentgeek" ),
 	github: chalk.cyan( "https://github.com/reverentgeek" ),
 	linkedin: chalk.cyan( "https://linkedin.com/in/davidneal" ),
 	web: chalk.cyan( "https://reverentgeek.com" ),
@@ -34,6 +35,7 @@ const data = {
 	labelWork: chalk.white.bold( "      Work:" ),
 	labelWorkUrl: chalk.white.bold( "           " ),
 	labelTwitter: chalk.white.bold( "   Twitter:" ),
+	labelMastodon: chalk.white.bold( "  Mastodon:" ),
 	labelGitHub: chalk.white.bold( "    GitHub:" ),
 	labelLinkedIn: chalk.white.bold( "  LinkedIn:" ),
 	labelWeb: chalk.white.bold( "       Web:" ),
@@ -55,6 +57,7 @@ const heading = `${ data.name }`;
 const working = `\n${ data.labelWork }  ${ data.work }`;
 const workingUrl = `${ data.labelWorkUrl }  ${ data.workUrl }`;
 const twittering = `${ data.labelTwitter }  ${ data.twitter }`;
+const tooting = `${ data.labelMastodon }  ${ data.mastodon }`;
 const githubing = `${ data.labelGitHub }  ${ data.github }`;
 const linkedining = `${ data.labelLinkedIn }  ${ data.linkedin }`;
 const webing = `${ data.labelWeb }  ${ data.web }`;
@@ -66,7 +69,7 @@ const msg = `\n${ data.msg }`;
 const card = [
 	avatar, banner,
 	hr, heading, hr, working, workingUrl,
-	twittering, githubing, linkedining,
+	twittering, tooting, githubing, linkedining,
 	webing, emailing, carding, bio, msg
 ];
 
