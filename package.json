@@ -1,6 +1,6 @@
 {
 	"name": "reverentgeek",
-	"version": "1.4.0",
+	"version": "1.4.1",
 	"description": "My personal calling card.",
 	"main": "./bin/card.js",
 	"bin": {
@@ -16,6 +16,10 @@
 	],
 	"author": "David Neal <david@reverentgeek.com> (https://reverentgeek.com)",
 	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/reverentgeek/reverentgeek-card.git"
+	},
 	"dependencies": {
 		"boxen": "^5.0.1",
 		"chalk": "^4.1.0"
