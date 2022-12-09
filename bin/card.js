@@ -5,6 +5,25 @@
 // Pull in our modules
 const chalk = require( "chalk" );
 const boxen = require( "boxen" );
+const gs = require( "gradient-string" );
+
+// define custom colors
+const pink = "#ff1675";
+const orange = "#ff7b01";
+const inkyBlue = "#130f25";
+const yellow = "#ffc942";
+const blue = "#00A3FF";
+const green = "#02e088";
+const lightBlue = "#99DAFF";
+
+// set up chalk and gradients
+const yellowChalk = chalk.hex( yellow );
+const lbChalk = chalk.hex( lightBlue  );
+const blueChalk = chalk.hex( blue );
+const greenChalk = chalk.hex( green  );
+const orangeChalk = chalk.hex( orange );
+// const pinkChalk = chalk.hex( pink );
+const ps = gs( pink, orange );
 
 // Some sweet ascii art
 const avatar = require( "../art/avatar" );
@@ -16,44 +35,46 @@ const newline = "\n";
 const options = {
 	padding: 1,
 	margin: 1,
-	borderStyle: "round"
+	borderStyle: "round",
+	borderColor: pink,
+	backgroundColor: inkyBlue
 };
 
 // Text + chalk definitions
 const data = {
-	name: chalk.white.bold( "                   DAVID NEAL" ),
-	handle: chalk.cyan( "reverentgeek" ),
-	work: chalk.white( "Principal Developer Advocate" ),
-	workUrl: chalk.cyan( "https://pluralsight.com" ),
-	twitter: chalk.cyan( "https://twitter.com/reverentgeek" ),
-	mastodon: chalk.cyan( "https://techhub.social/@reverentgeek" ),
-	github: chalk.cyan( "https://github.com/reverentgeek" ),
-	linkedin: chalk.cyan( "https://linkedin.com/in/davidneal" ),
-	web: chalk.cyan( "https://reverentgeek.com" ),
-	email: chalk.cyan( "david@reverentgeek.com" ),
-	npx: chalk.white( "npx reverentgeek" ),
-	labelWork: chalk.white.bold( "      Work:" ),
-	labelWorkUrl: chalk.white.bold( "           " ),
-	labelTwitter: chalk.white.bold( "   Twitter:" ),
-	labelMastodon: chalk.white.bold( "  Mastodon:" ),
-	labelGitHub: chalk.white.bold( "    GitHub:" ),
-	labelLinkedIn: chalk.white.bold( "  LinkedIn:" ),
-	labelWeb: chalk.white.bold( "       Web:" ),
-	labelCard: chalk.white.bold( "      Card:" ),
-	labelEmail: chalk.white.bold( "     Email:" ),
-	bio: chalk.yellow( `I am a family man, geek, musician, illustrator, 
+	name: yellowChalk.bold( "                   DAVID NEAL" ),
+	handle: yellowChalk( "reverentgeek" ),
+	work: ps( "Principal Developer Advocate" ),
+	workUrl: ps( "https://pluralsight.com" ),
+	twitter: yellowChalk( "https://twitter.com/reverentgeek" ),
+	mastodon: yellowChalk( "https://techhub.social/@reverentgeek" ),
+	github: yellowChalk( "https://github.com/reverentgeek" ),
+	linkedin: yellowChalk( "https://linkedin.com/in/davidneal" ),
+	web: yellowChalk( "https://reverentgeek.com" ),
+	email: yellowChalk( "david@reverentgeek.com" ),
+	npx: orangeChalk( "npx reverentgeek" ),
+	labelWork: blueChalk( "      Work:" ),
+	labelWorkUrl: blueChalk( "           " ),
+	labelTwitter: blueChalk( "   Twitter:" ),
+	labelMastodon: blueChalk( "  Mastodon:" ),
+	labelGitHub: blueChalk( "    GitHub:" ),
+	labelLinkedIn: blueChalk( "  LinkedIn:" ),
+	labelWeb: blueChalk( "       Web:" ),
+	labelCard: blueChalk( "      Card:" ),
+	labelEmail: blueChalk( "     Email:" ),
+	bio: lbChalk( `I am a family man, geek, musician, illustrator, 
 speaker, software developer, and Microsoft MVP
 living in North GA. I run on a high-octane
 mixture of caffeine and JavaScript, and
-I’m entirely made of bacon.` ),
-	msg: chalk.white( `If there's anything I can help you with,
+I'm entirely made of bacon.` ),
+	msg: greenChalk( `If there's anything I can help you with,
 reach out anytime! You can reach me by email and
 my Twitter direct messages are open!` )
 };
 
 // Actual strings we're going to output
-const hr = chalk.yellow( "----------~~~~~~~~~==========~~~~~~~~~-----------" );
-const heading = `${ data.name }`;
+const hr = ps( "----------~~~~~~~~~==========~~~~~~~~~-----------" );
+const heading = data.name;
 const working = `\n${ data.labelWork }  ${ data.work }`;
 const workingUrl = `${ data.labelWorkUrl }  ${ data.workUrl }`;
 const twittering = `${ data.labelTwitter }  ${ data.twitter }`;
@@ -67,7 +88,7 @@ const bio = `\n${ data.bio }`;
 const msg = `\n${ data.msg }`;
 
 const card = [
-	avatar, banner,
+	ps.multiline( avatar ), ps.multiline( banner ),
 	hr, heading, hr, working, workingUrl,
 	twittering, tooting, githubing, linkedining,
 	webing, emailing, carding, bio, msg
@@ -76,4 +97,4 @@ const card = [
 // Put all our output together into a single variable so we can use boxen effectively
 const output = card.join( newline );
 
-console.log( chalk.green( boxen( output, options ) ) ); // eslint-disable-line no-console
+console.log( boxen( output, options ) ); // eslint-disable-line no-console
