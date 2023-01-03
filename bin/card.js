@@ -47,7 +47,7 @@ const data = {
 	work: ps( "Principal Developer Advocate" ),
 	workUrl: ps( "https://pluralsight.com" ),
 	twitter: yellowChalk( "https://twitter.com/reverentgeek" ),
-	mastodon: yellowChalk( "https://techhub.social/@reverentgeek" ),
+	mastodon: yellowChalk( "@reverentgeek@reverentgeek.com" ),
 	github: yellowChalk( "https://github.com/reverentgeek" ),
 	linkedin: yellowChalk( "https://linkedin.com/in/davidneal" ),
 	web: yellowChalk( "https://reverentgeek.com" ),
