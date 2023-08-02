@@ -44,10 +44,12 @@ const options = {
 const data = {
 	name: yellowChalk.bold( "                   DAVID NEAL" ),
 	handle: yellowChalk( "reverentgeek" ),
-	work: ps( "Principal Developer Advocate" ),
-	workUrl: ps( "https://pluralsight.com" ),
+	// work: ps( "Principal Developer Advocate" ),
+	// workUrl: ps( "https://pluralsight.com" ),
 	twitter: yellowChalk( "https://twitter.com/reverentgeek" ),
 	mastodon: yellowChalk( "@reverentgeek@reverentgeek.com" ),
+	bluesky: yellowChalk( "@reverentgeek.com"),
+	threads: yellowChalk( "@reverentgeek"),
 	github: yellowChalk( "https://github.com/reverentgeek" ),
 	linkedin: yellowChalk( "https://linkedin.com/in/davidneal" ),
 	web: yellowChalk( "https://reverentgeek.com" ),
@@ -57,6 +59,8 @@ const data = {
 	labelWorkUrl: blueChalk( "           " ),
 	labelTwitter: blueChalk( "   Twitter:" ),
 	labelMastodon: blueChalk( "  Mastodon:" ),
+	labelBluesky: blueChalk( "   BlueSky:" ),
+	labelThreads: blueChalk( "   Threads:" ),
 	labelGitHub: blueChalk( "    GitHub:" ),
 	labelLinkedIn: blueChalk( "  LinkedIn:" ),
 	labelWeb: blueChalk( "       Web:" ),
@@ -75,10 +79,12 @@ my Twitter direct messages are open!` )
 // Actual strings we're going to output
 const hr = ps( "----------~~~~~~~~~==========~~~~~~~~~-----------" );
 const heading = data.name;
-const working = `\n${ data.labelWork }  ${ data.work }`;
-const workingUrl = `${ data.labelWorkUrl }  ${ data.workUrl }`;
+// const working = `\n${ data.labelWork }  ${ data.work }`;
+// const workingUrl = `${ data.labelWorkUrl }  ${ data.workUrl }`;
 const twittering = `${ data.labelTwitter }  ${ data.twitter }`;
 const tooting = `${ data.labelMastodon }  ${ data.mastodon }`;
+const skeeting = `${ data.labelBluesky }  ${ data.bluesky }`;
+const threading = `${ data.labelThreads }  ${ data.threads }`;
 const githubing = `${ data.labelGitHub }  ${ data.github }`;
 const linkedining = `${ data.labelLinkedIn }  ${ data.linkedin }`;
 const webing = `${ data.labelWeb }  ${ data.web }`;
@@ -87,10 +93,19 @@ const carding = `\n${ data.labelCard }  ${ data.npx }`;
 const bio = `\n${ data.bio }`;
 const msg = `\n${ data.msg }`;
 
+// const card = [
+// 	ps.multiline( avatar ), ps.multiline( banner ),
+// 	hr, heading, hr, working, workingUrl,
+// 	twittering, tooting, skeeting, threading,
+// 	githubing, linkedining,
+// 	webing, emailing, carding, bio, msg
+// ];
+
 const card = [
 	ps.multiline( avatar ), ps.multiline( banner ),
-	hr, heading, hr, working, workingUrl,
-	twittering, tooting, githubing, linkedining,
+	hr, heading, hr,
+	twittering, tooting, skeeting, threading,
+	githubing, linkedining,
 	webing, emailing, carding, bio, msg
 ];
 
