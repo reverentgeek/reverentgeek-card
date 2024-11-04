@@ -1,11 +1,12 @@
 {
 	"name": "reverentgeek",
-	"version": "1.6.0",
+	"version": "2.0.0",
 	"description": "My personal calling card.",
 	"main": "./bin/card.js",
 	"bin": {
 		"reverentgeek": "./bin/card.js"
 	},
+	"type": "module",
 	"scripts": {
 		"lint": "eslint bin/*.js art/*.js"
 	},
@@ -21,12 +22,12 @@
 		"url": "https://github.com/reverentgeek/reverentgeek-card.git"
 	},
 	"dependencies": {
-		"boxen": "^5.0.1",
-		"chalk": "^4.1.0",
-		"gradient-string": "^2.0.2"
+		"boxen": "^8.0.1",
+		"chalk": "^5.3.0",
+		"gradient-string": "^3.0.0"
 	},
 	"devDependencies": {
-		"eslint": "^8.46.0",
-		"eslint-config-reverentgeek": "^4.0.1"
+		"eslint": "^9.14.0",
+		"eslint-config-reverentgeek": "^5.1.0"
 	}
 }

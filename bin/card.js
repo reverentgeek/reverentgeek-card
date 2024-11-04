@@ -1,11 +1,14 @@
 #!/usr/bin/env node
-"use strict";
 // 👆 Used to tell Node.js that this is a CLI tool
 
 // Pull in our modules
-const chalk = require( "chalk" );
-const boxen = require( "boxen" );
-const gs = require( "gradient-string" );
+import chalk from "chalk";
+import boxen from "boxen";
+import gs from "gradient-string";
+
+// Some sweet ascii art
+import avatar from "../art/avatar.js";
+import banner from "../art/banner.js";
 
 // define custom colors
 const pink = "#ff1675";
@@ -23,11 +26,7 @@ const blueChalk = chalk.hex( blue );
 const greenChalk = chalk.hex( green  );
 const orangeChalk = chalk.hex( orange );
 // const pinkChalk = chalk.hex( pink );
-const ps = gs( pink, orange );
-
-// Some sweet ascii art
-const avatar = require( "../art/avatar" );
-const banner = require( "../art/banner" );
+const ps = gs( [ pink, orange ] );
 
 const newline = "\n";
 
@@ -48,8 +47,8 @@ const data = {
 	// workUrl: ps( "https://pluralsight.com" ),
 	twitter: yellowChalk( "https://twitter.com/reverentgeek" ),
 	mastodon: yellowChalk( "@reverentgeek@reverentgeek.com" ),
-	bluesky: yellowChalk( "@reverentgeek.com"),
-	threads: yellowChalk( "@reverentgeek"),
+	bluesky: yellowChalk( "@reverentgeek.com" ),
+	threads: yellowChalk( "@reverentgeek" ),
 	github: yellowChalk( "https://github.com/reverentgeek" ),
 	linkedin: yellowChalk( "https://linkedin.com/in/davidneal" ),
 	web: yellowChalk( "https://reverentgeek.com" ),
@@ -112,4 +111,4 @@ const card = [
 // Put all our output together into a single variable so we can use boxen effectively
 const output = card.join( newline );
 
-console.log( boxen( output, options ) ); // eslint-disable-line no-console
+console.log( boxen( output, options ) );
