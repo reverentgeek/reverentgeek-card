@@ -46,6 +46,7 @@ const data = {
 	// work: ps( "Principal Developer Advocate" ),
 	// workUrl: ps( "https://pluralsight.com" ),
 	twitter: yellowChalk( "https://x.com/reverentgeek" ),
+	instagram: yellowChalk( "https://instagram.com/reverentgeek" ),
 	mastodon: yellowChalk( "@reverentgeek@reverentgeek.com" ),
 	bluesky: yellowChalk( "@reverentgeek.com" ),
 	threads: yellowChalk( "@reverentgeek" ),
@@ -56,7 +57,8 @@ const data = {
 	npx: orangeChalk( "npx reverentgeek" ),
 	labelWork: blueChalk( "      Work:" ),
 	labelWorkUrl: blueChalk( "           " ),
-	labelTwitter: blueChalk( "X (Twitter):" ),
+	labelTwitter: blueChalk( "          X:" ),
+	labelInstagram: blueChalk( "  Instagram:" ),
 	labelMastodon: blueChalk( "   Mastodon:" ),
 	labelBluesky: blueChalk( "    BlueSky:" ),
 	labelThreads: blueChalk( "    Threads:" ),
@@ -71,8 +73,7 @@ living in North GA. I run on a high-octane
 mixture of caffeine and JavaScript, and
 I'm entirely made of bacon.` ),
 	msg: greenChalk( `If there's anything I can help you with,
-reach out anytime! You can reach me by email and
-my Twitter direct messages are open!` )
+reach out anytime!` )
 };
 
 // Actual strings we're going to output
@@ -81,6 +82,7 @@ const heading = data.name;
 // const working = `\n${ data.labelWork }  ${ data.work }`;
 // const workingUrl = `${ data.labelWorkUrl }  ${ data.workUrl }`;
 const twittering = `${ data.labelTwitter }  ${ data.twitter }`;
+const instagramming = `${ data.labelInstagram }  ${ data.instagram }`;
 const tooting = `${ data.labelMastodon }  ${ data.mastodon }`;
 const skeeting = `${ data.labelBluesky }  ${ data.bluesky }`;
 const threading = `${ data.labelThreads }  ${ data.threads }`;
@@ -103,9 +105,13 @@ const msg = `\n${ data.msg }`;
 const card = [
 	ps.multiline( avatar ), ps.multiline( banner ),
 	hr, heading, hr,
-	twittering, tooting, skeeting, threading,
-	githubing, linkedining,
-	webing, emailing, carding, bio, msg
+	webing, emailing,
+	linkedining,
+	githubing,
+	instagramming,
+	tooting, skeeting, threading,
+	twittering,
+	carding, bio, msg
 ];
 
 // Put all our output together into a single variable so we can use boxen effectively
