@@ -21,9 +21,9 @@ const lightBlue = "#99DAFF";
 
 // set up chalk and gradients
 const yellowChalk = chalk.hex( yellow );
-const lbChalk = chalk.hex( lightBlue  );
+const lbChalk = chalk.hex( lightBlue );
 const blueChalk = chalk.hex( blue );
-const greenChalk = chalk.hex( green  );
+const greenChalk = chalk.hex( green );
 const orangeChalk = chalk.hex( orange );
 // const pinkChalk = chalk.hex( pink );
 const ps = gs( [ pink, orange ] );
@@ -93,14 +93,6 @@ const emailing = `${ data.labelEmail }  ${ data.email }`;
 const carding = `\n${ data.labelCard }  ${ data.npx }`;
 const bio = `\n${ data.bio }`;
 const msg = `\n${ data.msg }`;
-
-// const card = [
-// 	ps.multiline( avatar ), ps.multiline( banner ),
-// 	hr, heading, hr, working, workingUrl,
-// 	twittering, tooting, skeeting, threading,
-// 	githubing, linkedining,
-// 	webing, emailing, carding, bio, msg
-// ];
 
 const card = [
 	ps.multiline( avatar ), ps.multiline( banner ),
