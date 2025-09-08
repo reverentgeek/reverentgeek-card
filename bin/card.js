@@ -11,22 +11,23 @@ import avatar from "../art/avatar.js";
 import banner from "../art/banner.js";
 
 // define custom colors
-const pink = "#ff1675";
-const orange = "#ff7b01";
-const inkyBlue = "#130f25";
-const yellow = "#ffc942";
-const blue = "#00A3FF";
-const green = "#02e088";
-const lightBlue = "#99DAFF";
+const colors = {
+	blue: "#00A3FF",
+	blueSky: "#51D2FB",
+	mintGreen: "#42F0CD",
+	inkyBlue: "#130f25",
+	lightBlue: "#99DAFF",
+	orange: "#ff7b01",
+	pink: "#ff1675",
+	yellow: "#ffc942"
+};
 
 // set up chalk and gradients
-const yellowChalk = chalk.hex( yellow );
-const lbChalk = chalk.hex( lightBlue );
-const blueChalk = chalk.hex( blue );
-const greenChalk = chalk.hex( green );
-const orangeChalk = chalk.hex( orange );
-// const pinkChalk = chalk.hex( pink );
-const ps = gs( [ pink, orange ] );
+const yellowChalk = chalk.hex( colors.yellow );
+const lbChalk = chalk.hex( colors.lightBlue );
+const blueChalk = chalk.hex( colors.blue );
+const orangeChalk = chalk.hex( colors.orange );
+const gradient = gs( [ colors.mintGreen, colors.blueSky ] );
 
 const newline = "\n";
 
@@ -35,16 +36,16 @@ const options = {
 	padding: 1,
 	margin: 1,
 	borderStyle: "round",
-	borderColor: pink,
-	backgroundColor: inkyBlue
+	borderColor: colors.blueSky,
+	backgroundColor: colors.inkyBlue
 };
 
 // Text + chalk definitions
 const data = {
 	name: yellowChalk.bold( "                   DAVID NEAL" ),
 	handle: yellowChalk( "reverentgeek" ),
-	// work: ps( "Principal Developer Advocate" ),
-	// workUrl: ps( "https://pluralsight.com" ),
+	work: gradient( "Developer Relations Engineer" ),
+	workUrl: gradient( " https://plaid.com" ),
 	twitter: yellowChalk( "https://x.com/reverentgeek" ),
 	instagram: yellowChalk( "https://instagram.com/reverentgeek" ),
 	mastodon: yellowChalk( "@reverentgeek@reverentgeek.com" ),
@@ -55,7 +56,7 @@ const data = {
 	web: yellowChalk( "https://reverentgeek.com" ),
 	email: yellowChalk( "david@reverentgeek.com" ),
 	npx: orangeChalk( "npx reverentgeek" ),
-	labelWork: blueChalk( "      Work:" ),
+	labelWork: blueChalk( "       Work:" ),
 	labelWorkUrl: blueChalk( "           " ),
 	labelTwitter: blueChalk( "          X:" ),
 	labelInstagram: blueChalk( "  Instagram:" ),
@@ -67,20 +68,20 @@ const data = {
 	labelWeb: blueChalk( "        Web:" ),
 	labelCard: blueChalk( "       Card:" ),
 	labelEmail: blueChalk( "      Email:" ),
-	bio: lbChalk( `I am a family man, geek, musician, illustrator, 
+	bio: lbChalk( `David is a family man, geek, musician, illustrator, 
 speaker, software developer, and Microsoft MVP
-living in North GA. I run on a high-octane
+living in North GA. He runs on a high-octane
 mixture of caffeine and JavaScript, and
-I'm entirely made of bacon.` ),
-	msg: greenChalk( `If there's anything I can help you with,
-reach out anytime!` )
+is entirely made of bacon.` )
+// msg: greenChalk( `If there's anything I can help you with,
+// reach out anytime!` )
 };
 
 // Actual strings we're going to output
-const hr = ps( "----------~~~~~~~~~==========~~~~~~~~~-----------" );
+const hr = gradient( "----------~~~~~~~~~==========~~~~~~~~~-----------" );
 const heading = data.name;
-// const working = `\n${ data.labelWork }  ${ data.work }`;
-// const workingUrl = `${ data.labelWorkUrl }  ${ data.workUrl }`;
+const working = `\n${ data.labelWork }  ${ data.work }`;
+const workingUrl = `${ data.labelWorkUrl }  ${ data.workUrl }`;
 const twittering = `${ data.labelTwitter }  ${ data.twitter }`;
 const instagramming = `${ data.labelInstagram }  ${ data.instagram }`;
 const tooting = `${ data.labelMastodon }  ${ data.mastodon }`;
@@ -92,18 +93,20 @@ const webing = `${ data.labelWeb }  ${ data.web }`;
 const emailing = `${ data.labelEmail }  ${ data.email }`;
 const carding = `\n${ data.labelCard }  ${ data.npx }`;
 const bio = `\n${ data.bio }`;
-const msg = `\n${ data.msg }`;
+// const msg = `\n${ data.msg }`;
 
 const card = [
-	ps.multiline( avatar ), ps.multiline( banner ),
+	gradient.multiline( avatar ), gradient.multiline( banner ),
 	hr, heading, hr,
+	working, workingUrl,
 	webing, emailing,
 	linkedining,
 	githubing,
 	instagramming,
 	tooting, skeeting, threading,
 	twittering,
-	carding, bio, msg
+	carding, bio
+	// , msg
 ];
 
 // Put all our output together into a single variable so we can use boxen effectively
