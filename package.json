@@ -27,7 +27,7 @@
 		"gradient-string": "^3.0.0"
 	},
 	"devDependencies": {
-		"eslint": "^9.35.0",
-		"eslint-config-reverentgeek": "^6.0.2"
+		"eslint": "^9.36.0",
+		"eslint-config-reverentgeek": "^6.2.0"
 	}
 }
