@@ -1,6 +1,6 @@
 {
 	"name": "reverentgeek",
-	"version": "2.2.0",
+	"version": "2.2.1",
 	"description": "My personal calling card.",
 	"main": "./bin/card.js",
 	"bin": {
@@ -28,6 +28,6 @@
 	},
 	"devDependencies": {
 		"eslint": "^9.36.0",
-		"eslint-config-reverentgeek": "^6.2.0"
+		"eslint-config-reverentgeek": "^6.3.0"
 	}
 }
