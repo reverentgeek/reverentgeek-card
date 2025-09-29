@@ -18,10 +18,14 @@ export const renderInfoSections = ( sections, options = defaultOptions ) => {
 		return labelColor( baseLabel );
 	};
 
-	return sections.map( ( { label, value, leadingNewline = false } ) => {
-		const prefix = leadingNewline ? leadingNewlineChar : "";
-		const formattedLabel = formatLabel( label );
+	return sections.flatMap( ( { label, value, leadingNewline = false } ) => {
+		const values = Array.isArray( value ) ? value : [ value ];
 
-		return `${ prefix }${ formattedLabel }  ${ value }`;
+		return values.map( ( entry, index ) => {
+			const prefix = leadingNewline && index === 0 ? leadingNewlineChar : "";
+			const formattedLabel = formatLabel( index === 0 ? label : "" );
+
+			return `${ prefix }${ formattedLabel }  ${ entry }`;
+		} );
 	} );
 };

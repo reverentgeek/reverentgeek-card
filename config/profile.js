@@ -5,8 +5,7 @@ export const profile = {
 	handle: "reverentgeek",
 	bio: "David is a family man, geek, musician, illustrator, speaker, software developer, and Microsoft MVP living in North GA. He runs on a high-octane mixture of caffeine and JavaScript, and is entirely made of bacon.",
 	infoSections: [
-		{ label: "Work", value: "Developer Relations Engineer", style: "gradient", leadingNewline: true },
-		{ label: "", value: "https://plaid.com", style: "gradient" },
+		{ label: "Work", value: [ "Developer Relations Engineer", "https://plaid.com" ], style: "gradient", leadingNewline: true },
 		{ label: "Handle", value: "reverentgeek", style: "yellow" },
 		{ label: "Portfolio", value: "https://reverentgeek.com", style: "yellow" },
 		{ label: "Email", value: "david@reverentgeek.com", style: "yellow" },

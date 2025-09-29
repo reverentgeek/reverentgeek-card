@@ -8,6 +8,7 @@ import { availableArt, loadArt } from "../art/index.js";
 import { artOrder, profile } from "../config/profile.js";
 import { colors, gradient, palette } from "./colors.js";
 import { renderInfoSections } from "./render-info.js";
+import { centerText, wrapText } from "./text.js";
 
 const newline = "\n";
 
@@ -28,13 +29,14 @@ const valueStylers = {
 };
 
 const styleValue = ( { value, style } ) => {
+	const values = Array.isArray( value ) ? value : [ value ];
 	const formatter = valueStylers[style];
 
 	if ( !formatter ) {
-		return value;
+		return values;
 	}
 
-	return formatter( value );
+	return values.map( entry => formatter( entry ) );
 };
 
 const styledInfoSections = profile.infoSections.map( section => ( {
@@ -45,40 +47,6 @@ const styledInfoSections = profile.infoSections.map( section => ( {
 // Actual strings we're going to output
 const hrText = "----------~~~~~~~~~==========~~~~~~~~~-----------";
 const hr = gradient( hrText );
-const centerText = ( text, width ) => {
-	const textLength = text.length;
-	const paddingTotal = Math.max( width - textLength, 0 );
-	const paddingLeft = Math.floor( paddingTotal / 2 );
-	const paddingRight = paddingTotal - paddingLeft;
-
-	return `${ " ".repeat( paddingLeft ) }${ text }${ " ".repeat( paddingRight ) }`;
-};
-const wrapText = ( text, width ) => {
-	const words = text.split( /\s+/ );
-	const lines = [];
-	let currentLine = "";
-
-	words.forEach( ( word ) => {
-		const candidate = currentLine.length === 0 ? word : `${ currentLine } ${ word }`;
-
-		if ( candidate.length <= width ) {
-			currentLine = candidate;
-			return;
-		}
-
-		if ( currentLine.length > 0 ) {
-			lines.push( currentLine );
-		}
-
-		currentLine = word;
-	} );
-
-	if ( currentLine.length > 0 ) {
-		lines.push( currentLine );
-	}
-
-	return lines;
-};
 const heading = palette.yellow.bold( centerText( profile.name, hrText.length ) );
 const formattedInfo = renderInfoSections( styledInfoSections, {
 	labelColor: palette.blue
