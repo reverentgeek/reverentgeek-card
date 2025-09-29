@@ -3,11 +3,7 @@ export const artOrder = [ "avatar", "banner" ];
 export const profile = {
 	name: "DAVID NEAL",
 	handle: "reverentgeek",
-	bio: `David is a family man, geek, musician, illustrator,
-speaker, software developer, and Microsoft MVP
-living in North GA. He runs on a high-octane
-mixture of caffeine and JavaScript, and
-is entirely made of bacon.`,
+	bio: "David is a family man, geek, musician, illustrator, speaker, software developer, and Microsoft MVP living in North GA. He runs on a high-octane mixture of caffeine and JavaScript, and is entirely made of bacon.",
 	infoSections: [
 		{ label: "Work", value: "Developer Relations Engineer", style: "gradient", leadingNewline: true },
 		{ label: "", value: "https://plaid.com", style: "gradient" },

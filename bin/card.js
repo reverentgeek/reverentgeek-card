@@ -53,12 +53,39 @@ const centerText = ( text, width ) => {
 
 	return `${ " ".repeat( paddingLeft ) }${ text }${ " ".repeat( paddingRight ) }`;
 };
+const wrapText = ( text, width ) => {
+	const words = text.split( /\s+/ );
+	const lines = [];
+	let currentLine = "";
+
+	words.forEach( ( word ) => {
+		const candidate = currentLine.length === 0 ? word : `${ currentLine } ${ word }`;
+
+		if ( candidate.length <= width ) {
+			currentLine = candidate;
+			return;
+		}
+
+		if ( currentLine.length > 0 ) {
+			lines.push( currentLine );
+		}
+
+		currentLine = word;
+	} );
+
+	if ( currentLine.length > 0 ) {
+		lines.push( currentLine );
+	}
+
+	return lines;
+};
 const heading = palette.yellow.bold( centerText( profile.name, hrText.length ) );
 const formattedInfo = renderInfoSections( styledInfoSections, {
 	labelColor: palette.blue
 } );
 
-const bio = `\n${ palette.lightBlue( profile.bio ) }`;
+const bioLines = wrapText( profile.bio, hrText.length );
+const bio = `\n${ bioLines.map( line => palette.lightBlue( line ) ).join( newline ) }`;
 
 const artAssets = artOrder.length > 0 ? artOrder : availableArt();
 const art = artAssets.map( name => gradient.multiline( loadArt( name ) ) );
