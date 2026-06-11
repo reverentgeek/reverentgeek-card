@@ -1,0 +1,12 @@
+#!/bin/sh
+# Run the test suite before allowing a commit. Aborts the commit on any failure.
+# Uses Node's built-in test runner directly so it works regardless of which
+# package manager is installed. To skip in an emergency: `git commit --no-verify`.
+
+echo "Running tests before commit..."
+
+if ! node --test; then
+	echo
+	echo "✖ Tests failed — commit aborted. Fix the failures or use --no-verify to bypass."
+	exit 1
+fi

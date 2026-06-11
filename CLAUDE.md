@@ -9,14 +9,21 @@ This is a terminal calling card application built with Node.js that displays for
 ## Commands
 
 - **Development preview**: `node bin/card.js` - Run the card locally to preview output
-- **Linting**: `npm run lint` - Run ESLint on all JavaScript files in bin/ and art/ directories
+- **Linting**: `npm run lint` - Run ESLint on all JavaScript files in bin/, art/, config/, and test/ directories
+- **Testing**: `npm test` - Run the test suite with Node's built-in test runner
+- **Coverage**: `npm run test:coverage` - Run tests and enforce 100% line/branch/function coverage
 - **Installation**: Users install/run via `npx reverentgeek`
+
+## Git Hooks
+
+A pre-commit hook in `.githooks/pre-commit` runs `node --test` and blocks the commit if any test fails. The hook is activated via `core.hooksPath`, which the `prepare` script sets automatically on `npm install`/`pnpm install`. To bypass it in an emergency, commit with `--no-verify`.
 
 ## Architecture
 
 ### Core Components
 
-- **bin/card.js**: Main entry point that orchestrates the entire card rendering
+- **bin/card.js**: Executable entry point that prints the rendered card
+- **bin/build-card.js**: Assembles the card string (art, heading, info, bio) and wraps it in boxen; kept separate from `card.js` so it can be unit-tested without side effects
 - **config/profile.js**: Contains all personal information, contact links, and art rendering order
 - **bin/colors.js**: Defines color palette and gradient configurations using chalk and gradient-string
 - **bin/text.js**: Text utilities for centering and wrapping text within specified widths

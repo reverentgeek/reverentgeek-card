@@ -2,14 +2,14 @@ import chalk from "chalk";
 import gs from "gradient-string";
 
 export const colors = {
-	blue: "#00A3FF",
-	blueSky: "#51D2FB",
-	mintGreen: "#42F0CD",
-	inkyBlue: "#130f25",
+	blue: "#006EFF",
+	blueSky: "#00D2FF",
+	springGreen: "#00ED64",
+	inkyBlue: "#001E2B",
 	lightBlue: "#99DAFF",
-	orange: "#ff7b01",
-	pink: "#ff1675",
-	yellow: "#ffc942"
+	orange: "#FF9F10",
+	pink: "#F2C5EE",
+	yellow: "#FFE212"
 };
 
 export const palette = {
@@ -19,4 +19,4 @@ export const palette = {
 	yellow: chalk.hex( colors.yellow )
 };
 
-export const gradient = gs( [ colors.mintGreen, colors.blueSky ] );
+export const gradient = gs( [ colors.springGreen, colors.blueSky ] );
