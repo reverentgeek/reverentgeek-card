@@ -22,8 +22,8 @@ importers:
         specifier: ^10.5.0
         version: 10.5.0
       eslint-config-reverentgeek:
-        specifier: ^7.1.10
-        version: 7.1.10(eslint@10.5.0)
+        specifier: ^7.1.11
+        version: 7.1.11(eslint@10.5.0)
 
 packages:
 
@@ -104,8 +104,8 @@ packages:
   '@types/tinycolor2@1.4.6':
     resolution: {integrity: sha512-iEN8J0BoMnsWBqjVbWH/c0G0Hh7O21lpR2/+PrvAVgWdzL7eexIFm4JN/Wn10PTcmNdtS6U67r499mlWMXOxNw==}
 
-  '@typescript-eslint/types@8.61.0':
-    resolution: {integrity: sha512-9QTQpZ5Iin4CdIodfbDQFSeiSJKidgYJYug1P9CC2xWgUTvlmixViqDZNciMjwLBZyJnG4tGmPl97rVAFb1AJg==}
+  '@typescript-eslint/types@8.62.0':
+    resolution: {integrity: sha512-KvAclkktORPvM54TgLgA4z9HIV1M8zOgw9ZVNXl9f/8dLYfXYX1wkMXP7qmabpijQRV5bHJLOmoyGQbLMaUYeg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   acorn-jsx@5.3.2:
@@ -196,8 +196,8 @@ packages:
     peerDependencies:
       eslint: '>=6.0.0'
 
-  eslint-config-reverentgeek@7.1.10:
-    resolution: {integrity: sha512-ozXTwMGrkUOyL1SwckcN4puLb0kItsMjknT+jHYEfN/4+1NG4uPEktUJLZ1o6YcCOevee6USIXWMLh2Lnn99EA==}
+  eslint-config-reverentgeek@7.1.11:
+    resolution: {integrity: sha512-RbL4062X6YNdtUTQN0CsVKoccu0h4ZBm0DPxXoX6UvSuPQGEWTLItdGRqFUr81qGPyBROMhUEdSxisVrIyXFSQ==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       eslint: '>=10.0.0'
@@ -310,8 +310,8 @@ packages:
     resolution: {integrity: sha512-7ACyT3wmyp3I61S4fG682L0VA2RGD9otkqGJIwNUMF1SWUombIIk+af1unuDYgMm082aHYwD+mzJvv9Iu8dsgg==}
     engines: {node: '>=18'}
 
-  globals@17.6.0:
-    resolution: {integrity: sha512-sepffkT8stwnIYbsMBpoCHJuJM5l98FUF2AnE07hfvE0m/qp3R586hw4jF4uadbhvg1ooIdzuu7CsfD2jzCaNA==}
+  globals@17.7.0:
+    resolution: {integrity: sha512-Czmyns5dUsq4seFBR/Kdydhmo8y9kC79hiSkPn0YcGtNnYWnrgt0vjrSjx9tspoDGWm2CMarffRuLjM4xUz8xg==}
     engines: {node: '>=18'}
 
   globrex@0.1.2:
@@ -412,8 +412,8 @@ packages:
   resolve-pkg-maps@1.0.0:
     resolution: {integrity: sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==}
 
-  semver@7.8.4:
-    resolution: {integrity: sha512-rUCObTnP32Q08R2uuIrt7r9PlEonuTmtuXYcW6s5kjdlj3xbnwe+21yXptAUYcMAABLkYYTtnmzb3w3EDZfueA==}
+  semver@7.8.5:
+    resolution: {integrity: sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -538,7 +538,7 @@ snapshots:
   '@stylistic/eslint-plugin@5.10.0(eslint@10.5.0)':
     dependencies:
       '@eslint-community/eslint-utils': 4.9.1(eslint@10.5.0)
-      '@typescript-eslint/types': 8.61.0
+      '@typescript-eslint/types': 8.62.0
       eslint: 10.5.0
       eslint-visitor-keys: 4.2.1
       espree: 10.4.0
@@ -553,7 +553,7 @@ snapshots:
 
   '@types/tinycolor2@1.4.6': {}
 
-  '@typescript-eslint/types@8.61.0': {}
+  '@typescript-eslint/types@8.62.0': {}
 
   acorn-jsx@5.3.2(acorn@8.17.0):
     dependencies:
@@ -627,15 +627,15 @@ snapshots:
   eslint-compat-utils@0.5.1(eslint@10.5.0):
     dependencies:
       eslint: 10.5.0
-      semver: 7.8.4
+      semver: 7.8.5
 
-  eslint-config-reverentgeek@7.1.10(eslint@10.5.0):
+  eslint-config-reverentgeek@7.1.11(eslint@10.5.0):
     dependencies:
       '@eslint/js': 10.0.1(eslint@10.5.0)
       '@stylistic/eslint-plugin': 5.10.0(eslint@10.5.0)
       eslint: 10.5.0
       eslint-plugin-n: 18.1.0(eslint@10.5.0)
-      globals: 17.6.0
+      globals: 17.7.0
     transitivePeerDependencies:
       - ts-declaration-location
       - typescript
@@ -657,7 +657,7 @@ snapshots:
       globals: 15.15.0
       globrex: 0.1.2
       ignore: 5.3.2
-      semver: 7.8.4
+      semver: 7.8.5
 
   eslint-scope@9.1.2:
     dependencies:
@@ -765,7 +765,7 @@ snapshots:
 
   globals@15.15.0: {}
 
-  globals@17.6.0: {}
+  globals@17.7.0: {}
 
   globrex@0.1.2: {}
 
@@ -846,7 +846,7 @@ snapshots:
 
   resolve-pkg-maps@1.0.0: {}
 
-  semver@7.8.4: {}
+  semver@7.8.5: {}
 
   shebang-command@2.0.0:
     dependencies:
