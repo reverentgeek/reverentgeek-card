@@ -7,6 +7,9 @@
 		"reverentgeek": "./bin/card.js"
 	},
 	"type": "module",
+	"engines": {
+		"node": ">=22"
+	},
 	"scripts": {
 		"prepare": "git config core.hooksPath .githooks || true",
 		"lint": "eslint bin/*.js art/*.js config/*.js test/*.js",
@@ -26,7 +29,7 @@
 	},
 	"dependencies": {
 		"boxen": "^8.0.1",
-		"chalk": "^5.6.2",
+		"chalk": "^6.0.0",
 		"gradient-string": "^3.0.0"
 	},
 	"devDependencies": {
